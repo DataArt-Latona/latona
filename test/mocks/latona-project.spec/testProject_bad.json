@@ -1,0 +1,17 @@
+{
+  "model": "./model.json",
+  "addons": [
+    {
+      "moduleName": "./testAddon_01.js",
+      "options": {}
+    },
+    {
+      "moduleName": "./testAddon_02.js",
+      "options": {}
+    },
+    {
+      "moduleName": "./testAddon_missing",
+      "options": {}
+    }
+  ]
+}

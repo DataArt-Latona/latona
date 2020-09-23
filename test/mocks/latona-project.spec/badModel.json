@@ -1,0 +1,4 @@
+{
+  "tables": { "foo": "bar" },
+  "sourceDataSets": 123
+}

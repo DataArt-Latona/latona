@@ -1,0 +1,15 @@
+{
+  "model": "./model.json",
+  "addons": [
+    {
+      "moduleName": "./testAddon_01.js",
+      "options": {
+        "otherScope": "other",
+        "dimScope": "dim"
+      }
+    }
+  ],
+  "logger": {
+    "disableLogToConsole": false
+  }
+}

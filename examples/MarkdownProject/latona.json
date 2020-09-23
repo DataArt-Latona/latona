@@ -1,0 +1,66 @@
+{
+  "model": "./model.json",
+  "addons": [
+    {
+      "moduleName": "latona-core-autofields",
+      "options": {
+        "fieldTemplates": [
+          {
+            "tableOption": "addSurrogateKey",
+            "addKeyPrefix": true,
+            "fieldTemplate": {
+              "fieldName": "s_key",
+              "sqlType": "uniqueidentifier",
+              "options": {
+                "isPublic": true,
+                "isSKey": true
+              }
+            }
+          },
+          {
+            "tableOption": "addVersionKey",
+            "addKeyPrefix": true,
+            "fieldTemplate": {
+              "fieldName": "v_key",
+              "sqlType": "uniqueidentifier",
+              "options": {
+                "isPublic": true,
+                "isVKey": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "moduleName": "latona-core-copy-fields",
+      "options": {
+        "rules": [
+          {
+            "fieldOptions": ["isNKey"],
+            "unsetOptions": ["isNKey", "isSKey", "isPublic"]
+          },
+          {
+            "fieldOptions": ["isSKey"],
+            "unsetOptions": ["isNKey", "isSKey"]
+          }
+        ]
+      }
+    },
+    {
+      "moduleName": "latona-core-clean-folders",
+      "options": {
+        "foldersToClean": ["./build"]
+      }
+    },
+    {
+      "moduleName": "./addons/sampleMarkdown.js",
+      "options": {
+        "outPath": "./build"
+      }
+    }
+  ],
+  "logger": {
+    "disableLogToConsole": false
+  }
+}

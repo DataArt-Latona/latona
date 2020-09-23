@@ -1,0 +1,21 @@
+{
+  "model": "./model.json",
+  "addons": [
+    {
+      "moduleName": "./testAddon_01.js",
+      "options": {
+        "otherScope": "other",
+        "dimScope": "dim"
+      }
+    },
+    {
+      "moduleName": "./testAddon_02.js",
+      "options": {
+        "factScope": "bad_fact"
+      }
+    }
+  ],
+  "logger": {
+    "disableLogToConsole": true
+  }
+}

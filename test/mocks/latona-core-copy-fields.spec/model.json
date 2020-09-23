@@ -1,0 +1,95 @@
+{
+  "tables": [
+    {
+      "tableName": "DimTableA",
+      "tableScope": "dim",
+      "keyPrefix": "dim_table_a",
+      "options": {
+        "addSurrogateKey": true
+      },
+      "fields": [
+        {
+          "fieldName": "dim_n_key_a",
+          "sqlType": "nvarchar(10)",
+          "options": { "isNKey": true, "dummyOption": true }
+        }
+      ]
+    },
+    {
+      "tableName": "DimTableB",
+      "tableScope": "dim",
+      "keyPrefix": "dim_table_b",
+      "options": {
+        "addSurrogateKey": true
+      },
+      "fields": [
+        {
+          "fieldName": "dim_n_key_b",
+          "sqlType": "nvarchar(10)",
+          "options": { "isNKey": true, "dummyOption": true }
+        }
+      ]
+    },
+    {
+      "tableName": "DimTableC",
+      "tableScope": "dim",
+      "keyPrefix": "dim_table_c",
+      "options": {
+        "addSurrogateKey": true
+      },
+      "references": ["DimTableA"],
+      "fields": [
+        {
+          "fieldName": "dim_n_key_c_1",
+          "sqlType": "nvarchar(10)",
+          "options": { "isNKey": true, "dummyOption": true }
+        },
+        {
+          "fieldName": "dim_n_duplicate_key_c_2",
+          "sqlType": "nvarchar(10)",
+          "options": { "isNKey": true, "dummyOption": true }
+        },
+        {
+          "fieldName": "attr",
+          "sqlType": "nvarchar(10)"
+        }
+      ]
+    },
+    {
+      "tableName": "FactTableX",
+      "tableScope": "fact",
+      "keyPrefix": "fact_table_x",
+      "options": {
+        "addSurrogateKey": true
+      },
+      "references": ["DimTableA"],
+      "fields": [
+        {
+          "fieldName": "fact_x_n_key",
+          "sqlType": "nvarchar(10)",
+          "options": { "isNKey": true }
+        }
+      ]
+    },
+    {
+      "tableName": "FactTableY",
+      "tableScope": "fact",
+      "keyPrefix": "fact_table_y",
+      "options": {
+        "addSurrogateKey": true
+      },
+      "references": ["DimTableB", "DimTableC"],
+      "fields": [
+        {
+          "fieldName": "fact_y_n_key",
+          "sqlType": "nvarchar(10)",
+          "options": { "isNKey": true }
+        },
+        {
+          "fieldName": "dim_n_duplicate_key_c_2",
+          "sqlType": "nvarchar(10)"
+        }
+      ]
+    }
+  ]
+}
