@@ -1,0 +1,241 @@
+{
+  "tables": [
+    {
+      "tableName": "AdventureWorksDWBuildVersion",
+      "tableScope": "other",
+      "options": {
+        "addSurrogateKey": true,
+        "addSurrogateVersionKeyhash": true,
+        "addNaturalKeyhash": true,
+        "addDateFields": true,
+        "nonScopeTable": true
+      },
+      "fields": [
+        {
+          "fieldName": "DBVersion",
+          "sqlType": "nvarchar(100)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isVersioned": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "VersionDate",
+          "sqlType": "datetime",
+          "lakeType": "DateTime",
+          "options": {
+            "isPersistent": true,
+            "isVersioned": true,
+            "isNullable": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "DimAccount",
+      "tableScope": "dim",
+      "keyPrefix": "Dim_Account",
+      "options": {
+        "addSurrogateKey": true,
+        "addSurrogateVersionKeyhash": true,
+        "addNaturalKeyhash": true,
+        "addDateFields": true,
+        "nonScopeTable": true
+      },
+      "fields": [
+        {
+          "fieldName": "AccountKey",
+          "sqlType": "int",
+          "lakeType": "int32",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isNKey": true
+          }
+        },
+        {
+          "fieldName": "ParentAccountKey",
+          "sqlType": "int",
+          "lakeType": "int32",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "AccountCodeAlternateKey",
+          "sqlType": "int",
+          "lakeType": "int32",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "ParentAccountCodeAlternateKey",
+          "sqlType": "int",
+          "lakeType": "int32",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "AccountDescription",
+          "sqlType": "nvarchar(100)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isVersioned": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "AccountType",
+          "sqlType": "nvarchar(100)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isVersioned": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "Operator",
+          "sqlType": "nvarchar(100)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isVersioned": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "CustomMembers",
+          "sqlType": "nvarchar(600)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isVersioned": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "ValueType",
+          "sqlType": "nvarchar(100)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isVersioned": true,
+            "isNullable": true
+          }
+        },
+        {
+          "fieldName": "CustomMemberOptions",
+          "sqlType": "nvarchar(400)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isVersioned": true,
+            "isNullable": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "DimCurrency",
+      "tableScope": "dim",
+      "keyPrefix": "Dim_Currency",
+      "options": {
+        "addSurrogateKey": true,
+        "addSurrogateVersionKeyhash": true,
+        "addNaturalKeyhash": true,
+        "addDateFields": true
+      },
+      "fields": [
+        {
+          "fieldName": "CurrencyKey",
+          "sqlType": "int",
+          "lakeType": "int32",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isNKey": true
+          }
+        },
+        {
+          "fieldName": "CurrencyAlternateKey",
+          "sqlType": "nchar(6)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "CurrencyName",
+          "sqlType": "nvarchar(100)",
+          "lakeType": "String",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isVersioned": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "FactTable",
+      "tableScope": "fact",
+      "keyPrefix": "Fact_Table",
+      "options": {
+        "addSurrogateKey": true,
+        "addSurrogateVersionKeyhash": true,
+        "addNaturalKeyhash": true,
+        "addDateFields": true
+      },
+      "fields": [
+        {
+          "fieldName": "fact_id",
+          "sqlType": "int",
+          "lakeType": "int32",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isNKey": true
+          }
+        },
+        {
+          "fieldName": "some_measure",
+          "sqlType": "int",
+          "lakeType": "int32",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true,
+            "isNKey": true
+          }
+        }
+      ]
+    }
+  ],
+  "sourceDataSets": [
+    {
+      "dataSetName": "publicDataSet",
+      "isPublic": true
+    },
+    {
+      "dataSetName": "publicDataSet02"
+    }
+  ]
+}

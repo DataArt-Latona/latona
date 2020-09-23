@@ -1,0 +1,377 @@
+{
+  "tables": [
+    {
+      "tableName": "DimClient",
+      "tableScope": "dim",
+      "keyPrefix": "client_",
+      "options": {
+        "addSurrogateKey": true,
+        "addVersionKey": true
+      },
+      "fields": [
+        {
+          "fieldName": "client_id",
+          "sqlType": "int",
+          "options": {
+            "isPersistent": true,
+            "isNKey": true
+          }
+        },
+        {
+          "fieldName": "client_name",
+          "sqlType": "nvarchar(10)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        },
+        {
+          "fieldName": "client_category",
+          "sqlType": "nvarchar(10)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "DimOrder",
+      "tableScope": "dim",
+      "keyPrefix": "order_",
+      "options": {
+        "addSurrogateKey": true,
+        "addVersionKey": true
+      },
+      "fields": [
+        {
+          "fieldName": "order_id",
+          "sqlType": "int",
+          "options": {
+            "isPersistent": true,
+            "isNKey": true
+          }
+        },
+        {
+          "fieldName": "region",
+          "sqlType": "nvarchar(100)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        },
+        {
+          "fieldName": "city",
+          "sqlType": "nvarchar(100)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        },
+        {
+          "fieldName": "zip_code",
+          "sqlType": "nvarchar(100)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        },
+        {
+          "fieldName": "sales_person",
+          "sqlType": "nvarchar(10)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "DimProduct",
+      "tableScope": "dim",
+      "keyPrefix": "dim_product_",
+      "options": {
+        "addSurrogateKey": true,
+        "addVersionKey": true
+      },
+      "fields": [
+        {
+          "fieldName": "product_id",
+          "sqlType": "int",
+          "options": {
+            "isPersistent": true,
+            "isNKey": true
+          }
+        },
+        {
+          "fieldName": "product_name",
+          "sqlType": "nvarchar(100)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        },
+        {
+          "fieldName": "product_category_1",
+          "sqlType": "nvarchar(100)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        },
+        {
+          "fieldName": "product_category_2",
+          "sqlType": "nvarchar(100)",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "FactOrderItem",
+      "tableScope": "fact",
+      "keyPrefix": "order_item_",
+      "options": {
+        "addSurrogateKey": true,
+        "addVersionKey": true
+      },
+      "references": [
+        "DimClient",
+        "DimOrder",
+        "DimProduct"
+      ],
+      "fields": [
+        {
+          "fieldName": "order_item_id",
+          "sqlType": "int",
+          "options": {
+            "isPersistent": true,
+            "isNKey": true
+          }
+        },
+        {
+          "fieldName": "order_date",
+          "sqlType": "int",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        },
+        {
+          "fieldName": "item_delivered_date",
+          "sqlType": "int",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        },
+        {
+          "fieldName": "price",
+          "sqlType": "float",
+          "options": {
+            "isPublic": true,
+            "isVersioned": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "DimDate",
+      "tableScope": "other",
+      "fields": [
+        {
+          "fieldName": "date_key",
+          "sqlType": "int",
+          "options": {
+            "isPersistent": true,
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "FullDateAlternateKey",
+          "sqlType": "date",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "DayNumberOfWeek",
+          "sqlType": "tinyint",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "EnglishDayNameOfWeek",
+          "sqlType": "nvarchar(20)",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "SpanishDayNameOfWeek",
+          "sqlType": "nvarchar(20)",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "FrenchDayNameOfWeek",
+          "sqlType": "nvarchar(20)",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "DayNumberOfMonth",
+          "sqlType": "tinyint",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "DayNumberOfYear",
+          "sqlType": "smallint",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "WeekNumberOfYear",
+          "sqlType": "tinyint",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "EnglishMonthName",
+          "sqlType": "nvarchar(20)",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "SpanishMonthName",
+          "sqlType": "nvarchar(20)",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "FrenchMonthName",
+          "sqlType": "nvarchar(20)",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "MonthNumberOfYear",
+          "sqlType": "tinyint",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "CalendarQuarter",
+          "sqlType": "tinyint",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "CalendarYear",
+          "sqlType": "smallint",
+          "options": {
+            "isPublic": true
+          }
+        },
+        {
+          "fieldName": "CalendarSemester",
+          "sqlType": "tinyint",
+          "options": {
+            "isPublic": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "RawOrderItems",
+      "tableScope": "raw",
+      "fields": [
+        {
+          "fieldName": "client_id",
+          "sqlType": "int"
+        },
+        {
+          "fieldName": "client_name",
+          "sqlType": "nvarchar(10)"
+        },
+        {
+          "fieldName": "client_category",
+          "sqlType": "nvarchar(10)"
+        },
+        {
+          "fieldName": "order_id",
+          "sqlType": "int"
+        },
+        {
+          "fieldName": "region",
+          "sqlType": "nvarchar(100)"
+        },
+        {
+          "fieldName": "city",
+          "sqlType": "nvarchar(100)"
+        },
+        {
+          "fieldName": "zip_code",
+          "sqlType": "nvarchar(100)"
+        },
+        {
+          "fieldName": "sales_person",
+          "sqlType": "nvarchar(10)"
+        },
+        {
+          "fieldName": "product_id",
+          "sqlType": "int"
+        },
+        {
+          "fieldName": "product_name",
+          "sqlType": "nvarchar(100)"
+        },
+        {
+          "fieldName": "product_category_1",
+          "sqlType": "nvarchar(100)"
+        },
+        {
+          "fieldName": "product_category_2",
+          "sqlType": "nvarchar(100)"
+        },
+        {
+          "fieldName": "order_item_id",
+          "sqlType": "int"
+        },
+        {
+          "fieldName": "order_date",
+          "sqlType": "datetime"
+        },
+        {
+          "fieldName": "item_delivered_date",
+          "sqlType": "datetime"
+        },
+        {
+          "fieldName": "price",
+          "sqlType": "float"
+        }
+      ]
+    }
+  ],
+  "sourceDataSets": [
+    {
+      "dataSetName": "RawOrderItemsDS",
+      "query": "select * from vOrderItems",
+      "schemaTable": "RawOrderItems"
+    }
+  ]
+}

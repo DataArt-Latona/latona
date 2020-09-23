@@ -1,0 +1,126 @@
+{
+  "tables": [
+    {
+      "tableName": "DimTable",
+      "tableScope": "dimension",
+      "fields": [
+        {
+          "fieldName": "naturalKey",
+          "options": { "isNatKey": true, "isPersistent": true }
+        },
+        {
+          "fieldName": "surKey",
+          "options": { "isSurKey": true, "isPublic": true }
+        },
+        {
+          "fieldName": "verKey",
+          "options": { "isVerKey": true, "isPublic": true }
+        },
+        {
+          "fieldName": "indexed",
+          "options": { "isIndex": true, "isPublic": true }
+        },
+        {
+          "fieldName": "data",
+          "options": {
+            "isVersioned": true,
+            "isPublic": true,
+            "isPersistent": true
+          }
+        }
+      ]
+    },
+    {
+      "tableName": "FactTable",
+      "tableScope": "fact",
+      "fields": [
+        {
+          "fieldName": "naturalKey",
+          "options": { "isNatKey": true, "isPersistent": true }
+        },
+        {
+          "fieldName": "surKey",
+          "options": { "isSurKey": true, "isPublic": true }
+        },
+        {
+          "fieldName": "verKey",
+          "options": { "isVerKey": true, "isPublic": true }
+        },
+        {
+          "fieldName": "indexed",
+          "options": { "isIndex": true, "isPublic": true }
+        },
+        {
+          "fieldName": "data",
+          "options": { "isVersioned": true, "isPublic": true }
+        }
+      ]
+    },
+    {
+      "tableName": "RawTable1",
+      "tableScope": "raw",
+      "options": {
+        "isInternal": true
+      },
+      "fields": [
+        {
+          "fieldName": "naturalKey",
+          "options": { "isNatKey": true, "isPersistent": true }
+        },
+        {
+          "fieldName": "surKey",
+          "options": { "isSurKey": true, "isPublic": true }
+        },
+        {
+          "fieldName": "verKey",
+          "options": { "isVerKey": true, "isPublic": true }
+        },
+        {
+          "fieldName": "indexed",
+          "options": { "isIndex": true, "isPublic": true }
+        },
+        {
+          "fieldName": "data",
+          "options": { "isVersioned": true, "isPublic": true }
+        }
+      ]
+    },
+    {
+      "tableName": "RawTable2",
+      "tableScope": "raw",
+      "options": {
+        "isInternal": true
+      },
+      "fields": []
+    },
+    {
+      "tableName": "OtherTable",
+      "tableScope": "other",
+      "options": {
+        "isInternal": true
+      },
+      "fields": [
+        {
+          "fieldName": "naturalKey",
+          "options": { "isNatKey": true, "isPersistent": true }
+        },
+        {
+          "fieldName": "surKey",
+          "options": { "isSurKey": true, "isPublic": true }
+        },
+        {
+          "fieldName": "verKey",
+          "options": { "isVerKey": true, "isPublic": true }
+        },
+        {
+          "fieldName": "indexed",
+          "options": { "isIndex": true, "isPublic": true }
+        },
+        {
+          "fieldName": "data",
+          "options": { "isVersioned": true, "isPublic": true }
+        }
+      ]
+    }
+  ]
+}

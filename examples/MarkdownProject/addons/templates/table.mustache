@@ -1,0 +1,21 @@
+# {{tableName}}
+
+**Some properties:**
+* Scope: `{{tableScope}}`
+* keyPrefix: `{{keyPrefix}}`
+* fields count: {{fields.length}}
+{{#hasReferences}}
+* refernce count: {{references.length}}
+
+**Has references:**
+{{#references}}
+* {{.}}
+{{/references}}
+{{/hasReferences}}
+
+**Fields:**
+|Field Name|sqlType|
+|----------|-------|
+{{#fields}}
+|{{fieldName}}|{{sqlType}}|
+{{/fields}}

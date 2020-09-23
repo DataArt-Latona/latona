@@ -1,0 +1,116 @@
+{
+  "name": "latona",
+  "version": "2.0.1",
+  "description": "DataArt's Latona - DW/BI solution accelerator which simplifies model-based code generation",
+  "keywords": [
+    "DataArt",
+    "Latona",
+    "DW",
+    "BI",
+    "code generation"
+  ],
+  "homepage": "https://github.com/DataArt-Latona/latona",
+  "bugs": {
+    "url": "https://github.com/DataArt-Latona/latona/issues"
+  },
+  "bin": {
+    "latona": "./bin/latona-cli.js"
+  },
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "directories": {
+    "doc": "./docs",
+    "example": "./examples"
+  },
+  "scripts": {
+    "test": "mocha ./test/**/*.spec.js",
+    "lint": "npx eslint .",
+    "coverage": "nyc --all --reporter=html --reporter=text --reporter=lcov npm run test",
+    "docs": "jsdoc2md ./index.js ./src/**/*.js --separators --name-format >./docs/dev/API.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DataArt-Latona/latona.git"
+  },
+  "license": "SEE LICENSE IN license.md",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.0.0",
+    "fs-extra": "^7.0.1",
+    "mustache": "^3.2.1",
+    "resolve": "^1.17.0",
+    "winston": "^3.2.1",
+    "winston-transport": "^4.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jsdoc-to-markdown": "^5.0.3",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "prettier": "2.0.4"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "private": true,
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "rules": {
+      "class-methods-use-this": "off",
+      "consistent-return": "off",
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "args": "none"
+        }
+      ],
+      "arrow-body-style": "off",
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true
+        }
+      ],
+      "linebreak-style": [
+        "error",
+        "windows"
+      ],
+      "indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ]
+    },
+    "env": {
+      "mocha": true
+    }
+  },
+  "eslintIgnore": [
+    "./node_modules/**",
+    "coverage/**"
+  ],
+  "nyc": {
+    "exclude": [
+      "coverage /**",
+      "test/**",
+      "test{,-*}.js",
+      "**/*.test.js",
+      "**/__tests__ /**",
+      "**/node_modules/**",
+      "**/examples/**"
+    ]
+  }
+}

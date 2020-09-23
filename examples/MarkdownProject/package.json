@@ -1,0 +1,8 @@
+{
+  "name": "markdownproject",
+  "version": "0.0.1",
+  "description": "Sample Latona rendering project",
+  "dependencies": {
+    "latona": "file:../.."
+  }
+}

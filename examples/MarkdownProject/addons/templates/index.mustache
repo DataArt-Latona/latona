@@ -1,0 +1,62 @@
+# Entire model in one file
+
+Model status: {{properties.modelStatus}}
+
+## Business processes
+
+{{#collections.businessProcesses}}
+### {{businessProcessName}}
+
+{{description}}
+
+Related tables:
+{{#relatedTables}}
+* [{{.}}](./{{.}}.md)
+{{/relatedTables}}
+
+{{/collections.businessProcesses}}
+
+## Source data sets
+
+|Data set name|Schema table|
+|-------------|------------|
+{{#sourceDataSets}}
+|{{dataSetName}}|[{{schemaTable}}](./{{schemaTable}}.md)|
+{{/sourceDataSets}}
+
+## Tables table
+
+|Table name|Scope|Key prefix|Fields count|Reference count|
+|----------|-----|----------|------------|---------------|
+{{#tables}}
+|[{{tableName}}](./{{tableName}}.md)|{{tableScope}}|{{keyPrefix}}|{{fields.length}}|{{references.length}}|
+{{/tables}}
+
+
+## Table per section
+
+{{#tables}}
+### {{tableName}}
+
+**Some properties:**
+* Scope: `{{tableScope}}`
+* keyPrefix: `{{keyPrefix}}`
+* fields count: {{fields.length}}
+{{#hasReferences}}
+* refernce count: {{references.length}}
+
+**Has references:**
+{{#references}}
+* {{.}}
+{{/references}}
+{{/hasReferences}}
+
+**Fields:**
+|Field Name|sqlType|
+|----------|-------|
+{{#fields}}
+|{{fieldName}}|{{sqlType}}|
+{{/fields}}
+
+
+{{/tables}}
