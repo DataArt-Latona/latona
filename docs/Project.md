@@ -48,5 +48,5 @@ Useful links:
   is expected for `model` and `addons`.
 - See [addon registry](./addons/addon-registry.md) for links to addon
   documentation pages.
-- See [LatonaProject.load](./dev/API.md#latonaprojectloadproject-projectpath-latonaproject)
+- See [LatonaProject.load](./dev/API.md#LatonaProject.load)
   method for the description of logger settings.
