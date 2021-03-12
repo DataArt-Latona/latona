@@ -96,4 +96,4 @@ requests to us. All contributors should comply with our
 
 **Latona** is copyright (c) 2019-present DataArt (www.dataart.com) and all
 contributors and licensed under the Apache License, Version 2.0.
-See the [LICENSE.md](./LICENSE.md) file for more details.
+See the [LICENSE](./LICENSE) file for more details.
