@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies and run tests across different versions of node
 
-name: Node.js CI
+name: unit tests
 
 on:
   push:
-    branches: [master]
+    branches: [master, develop]
   pull_request:
-    branches: [master]
+    branches: [master, develop]
 
 jobs:
   build:
