@@ -12,18 +12,28 @@ We assume that you have already installed the latona package as described in the
 
 ### Initial setup
 
-To start with latona we need to create an empty folder and bootstrap the project by creating new model and project files (see [CLI reference](./Cli.md) for the full list of options):
+To start with latona we need to create an empty folder and bootstrap the project
+by creating new model and project files (see [CLI reference](./Cli.md) for the
+full list of options):
 
 ```
 latona new model
 latona new project
 ```
 
+**Note:** The `package.json` file should exist in the folder where you store
+the project and model (or in one of parent directories). This is necessary
+to enable resolving of dependencies for addons.
+
 ### Model file
 
 ([example](../examples/MarkdownProject/model.json))
 
-1. Let's take a look at our `model` object (see [model docs](./Model.md) for more information). The `model` object must be described in a `.json` file. Our model (which is a bit reacher than the one you will get after calling the Latona CLI) will have all base properties - `tables`, `sourceDataSets`, `properties`, and `collections`:
+1. Let's take a look at our `model` object (see [model docs](./Model.md) for
+   more information). The `model` object must be described in a `.json` file.
+   Our model (which is a bit reacher than the one you will get after calling the
+   Latona CLI) will have all base properties - `tables`, `sourceDataSets`,
+   `properties`, and `collections`:
 
 ```json
 {
@@ -79,9 +89,12 @@ latona new project
 }
 ```
 
-As you can see, this table has `tableName`, `tableScope`, `keyPrefix`, 2 `options` and 3 `fields`. Detail information about table data you can find here: [table docs](./Model.md#table).
+As you can see, this table has `tableName`, `tableScope`, `keyPrefix`,
+2 `options` and 3 `fields`. Detail information about table data you can find
+here: [table docs](./Model.md#table).
 
-3. Also we have some external data we want to use to generate ETL workflows using Latona. Let's add it to `sourceDataSets`:
+3. Also we have some external data we want to use to generate ETL workflows
+   using Latona. Let's add it to `sourceDataSets`:
 
 ```json
 {
@@ -99,7 +112,8 @@ As you can see, this table has `tableName`, `tableScope`, `keyPrefix`, 2 `option
 ```
 
 4. `properties` and `collections` objects also may contribute to code generation,
-   it all depends on what your addon composition relies upon. Please see next section for more details on this.
+   it all depends on what your addon composition relies upon. Please see next
+   section for more details on this.
 
 ```json
 {
@@ -140,7 +154,8 @@ As you can see, this table has `tableName`, `tableScope`, `keyPrefix`, 2 `option
 
 ([example](../examples/MarkdownProject/latona.json))
 
-5. Let's take a look at the project file now. The Latona project has three key elements:
+5. Let's take a look at the project file now. The Latona project has three key
+   elements:
 
 ```json
 {
@@ -150,17 +165,22 @@ As you can see, this table has `tableName`, `tableScope`, `keyPrefix`, 2 `option
 }
 ```
 
-6. `model` should point to your model file, the path needs to be absolute or relative to the project file location.
+6. `model` should point to your model file, the path needs to be absolute or
+   relative to the project file location.
 
-7. `addons` array contains the list of "addon references", each containing `moduleName` and addon-specific options.
+7. `addons` array contains the list of "addon references", each containing
+   `moduleName` and addon-specific options.
 
    The `moduleName` will be treated as follows:
 
-   1. Names starting with `latona-core-` are reserved for [built-in "core" addons](./addons/addon-registry.md#core-addons)
-   2. Names starting with `./` or `../` are considered as local custom addons and will be resolved against project file location
+   1. Names starting with `latona-core-` are reserved for
+      [built-in "core" addons](./addons/addon-registry.md#core-addons)
+   2. Names starting with `./` or `../` are considered as local custom addons
+      and will be resolved against project file location
    3. All other module names will be resolved using common rules for `require`
 
-   Addon's `options` are very specific to the particular addon, please refer to the corresponding documentation page for details.
+   Addon's `options` are very specific to the particular addon, please refer to
+   the corresponding documentation page for details.
 
    Here is how addon configuration may look like for...
 
@@ -213,9 +233,12 @@ As you can see, this table has `tableName`, `tableScope`, `keyPrefix`, 2 `option
 
 8. Finally, logging setting may be set in the project file:
 
-   - `disableLogToConsole`: by default Latona will log all it's working progress into console. Setting this prop to `true` will prevent such behavior;
-   - `runtimeLogsFilePath`: if specified, Latona will save all it's working progress into provided file;
-   - `exceptionsLogsFilePath`: if specified, Latona will save all unexpected error messages into provided file;
+   - `disableLogToConsole`: by default Latona will log all it's working progress
+     into console. Setting this prop to `true` will prevent such behavior;
+   - `runtimeLogsFilePath`: if specified, Latona will save all it's working
+     progress into provided file;
+   - `exceptionsLogsFilePath`: if specified, Latona will save all unexpected
+     error messages into provided file;
 
    This property is _optional_.
 
@@ -231,7 +254,8 @@ As you can see, this table has `tableName`, `tableScope`, `keyPrefix`, 2 `option
 
 ### Validation and rendering
 
-9. Now we're ready to check our project. Run this command from your project directory:
+9. Now we're ready to check our project. Run this command from your project
+   directory:
 
 ```
 latona validate
@@ -245,4 +269,5 @@ latona render
 
 ## Further reading
 
-We have other pages that discuss various Latona concepts in greater details. Find the full list [here](./README.md).
+We have other pages that discuss various Latona concepts in greater details.
+Find the full list [here](./README.md).
