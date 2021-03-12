@@ -26,15 +26,20 @@ Download and install:
 
 ### Install
 
-1. Use `npm` to install latona from the repo (**note**: the path to the package will change as soon as we're done with moving to opensource):
+1. Use `npm` to crate a `package.json` file for yor project (see [npm documentation](https://docs.npmjs.com/cli/v7/commands/npm-init) for more details):
+
+```
+npm init
+```
+
+2. Use `npm` to install latona from the repo (**note**: the path to the package will change as soon as we're done with moving to opensource and packaging is up and running):
 
 ```
 npm install -g git+https://github.com/DataArt-Latona/latona.git#master
 npm link
 ```
 
-2. Use `npm` to install required template packages (refer to [this
-   page](./docs/addons/addon-registry.md) for the complete list), for example:
+3. Use `npm` to install required addon packages (refer to [this page](./docs/addons/addon-registry.md) for the complete list), for example:
 
 ```
 npm install <package-name>
@@ -49,8 +54,7 @@ latona new model
 latona new project
 ```
 
-2. Adjust model content and project settings as needed - read [this
-   tutorial](./docs/Usage.md) to get more details
+2. Adjust model content and project settings as needed - read [this tutorial](./docs/Usage.md) to get more details
 
 3. Validate your project:
 
