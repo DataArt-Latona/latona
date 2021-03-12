@@ -4,9 +4,9 @@ name: unit tests (master)
 
 on:
   push:
-    branches: [mater]
+    branches: [master]
   pull_request:
-    branches: [mater]
+    branches: [master]
 
 jobs:
   build:
