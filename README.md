@@ -1,5 +1,7 @@
 # Latona
 
+![unit tests (master)](https://github.com/dataart-latona/latona/actions/workflows/tests_master.yml/badge.svg) ![unit tests (develop)](https://github.com/dataart-latona/latona/actions/workflows/tests_develop.yml/badge.svg)
+
 Latona is the DW/BI solution accelerator which simplifies model-based code
 generation.
 
