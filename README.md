@@ -10,8 +10,8 @@ artifacts required to spin off an end-to-end data warehouse/data platform.
 Such artifacts might include:
 
 - Database projects (staging and public areas of a DW)
-- ETL code for the selected technology (SSIS, Azure Data Factory, Pentaho, etc.)
-- MPP artifacts (Azure Data Lake or alike)
+- ETL code for the selected technology
+- MPP artifacts
 - Model documentation
 - Any other thing that can be templated
 
@@ -37,7 +37,7 @@ npm init
 2. Use `npm` to install latona from the repo (**note**: the path to the package will change as soon as we're done with moving to opensource and packaging is up and running):
 
 ```
-npm install -g git+https://github.com/DataArt-Latona/latona.git#master
+npm install -g latona
 npm link
 ```
 
