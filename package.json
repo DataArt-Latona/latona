@@ -1,6 +1,6 @@
 {
   "name": "latona",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "DataArt's Latona - DW/BI solution accelerator which simplifies model-based code generation",
   "keywords": [
     "DataArt",
@@ -14,7 +14,7 @@
     "url": "https://github.com/DataArt-Latona/latona/issues"
   },
   "bin": {
-    "latona": "./bin/latona-cli.js"
+    "latona": "bin/latona-cli.js"
   },
   "main": "./index.js",
   "types": "./index.d.ts",
